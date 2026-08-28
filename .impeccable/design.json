@@ -1,0 +1,309 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-28T00:00:00.000Z",
+  "title": "Design System: recipes",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#2b2724",
+          "#453f3a",
+          "#605850",
+          "#8a8078",
+          "#b3aaa1",
+          "#d8d2c8",
+          "#efece7",
+          "#ffffff"
+        ]
+      },
+      "wash": {
+        "role": "neutral",
+        "displayName": "Wash",
+        "canonical": "#faf8f5",
+        "tonalRamp": [
+          "#28241f",
+          "#413b33",
+          "#5c5449",
+          "#857c70",
+          "#afa79b",
+          "#d5cec4",
+          "#eae5dd",
+          "#faf8f5"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#131110",
+        "tonalRamp": [
+          "#131110",
+          "#2a2523",
+          "#443d39",
+          "#615851",
+          "#867c73",
+          "#aea69c",
+          "#d6d0c7",
+          "#f3f0eb"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Stone",
+        "canonical": "#6f6862",
+        "tonalRamp": [
+          "#1c1917",
+          "#332e2a",
+          "#4d463f",
+          "#6f6862",
+          "#938b83",
+          "#b8b0a7",
+          "#dbd5cc",
+          "#f4f1ec"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "#e8e3db",
+        "tonalRamp": [
+          "#26221c",
+          "#3e3830",
+          "#585045",
+          "#7d7466",
+          "#a79d8d",
+          "#cbc3b6",
+          "#e8e3db",
+          "#f8f6f2"
+        ]
+      },
+      "gold": {
+        "role": "primary",
+        "displayName": "Marking Gold",
+        "canonical": "#f0b429",
+        "tonalRamp": [
+          "#3a2703",
+          "#5c3d06",
+          "#7f550b",
+          "#a37012",
+          "#c78e1b",
+          "#f0b429",
+          "#f7cf74",
+          "#fdeec8"
+        ]
+      },
+      "gold-deep": {
+        "role": "primary",
+        "displayName": "Roasted Gold",
+        "canonical": "#8a5310",
+        "tonalRamp": [
+          "#2a1904",
+          "#421f06",
+          "#5e360a",
+          "#8a5310",
+          "#b3731f",
+          "#d79a4a",
+          "#eec48c",
+          "#fae6cd"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The pinned recipe title only. 40px on mobile, 56px from sm up."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings sitting above a ruled divider."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card headings - 24px on the ingredient panel, 17px on recipe cards."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Subheads, ingredient names, chip labels, placeholder text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase wide-tracked eyebrows and nav links."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out-image",
+        "value": "transform 500ms cubic-bezier(0, 0, 0.2, 1)",
+        "purpose": "The 1.03 image scale on group hover - the only transform in the system."
+      },
+      {
+        "name": "color-200",
+        "value": "color 200ms, background-color 200ms, border-color 200ms",
+        "purpose": "Every state color change: nav hover, card border to gold, search focus."
+      },
+      {
+        "name": "arrow-nudge",
+        "value": "transform 200ms cubic-bezier(0, 0, 0.2, 1)",
+        "purpose": "The 4px rightward arrow travel on accent links."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "container-max",
+        "value": "1440px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Meta Chip",
+      "kind": "chip",
+      "refersTo": "chip-meta",
+      "description": "The signature element: a pill carrying an icon and one fact a cook needs before committing to a recipe.",
+      "html": "<span class=\"ds-chip\"><svg class=\"ds-chip-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><polyline points=\"12 6 12 12 16 14\"/></svg>45 min</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid #e8e3db; border-radius: 9999px; background: #faf8f5; color: #131110; font-family: Inter, system-ui, sans-serif; font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; } .ds-chip-icon { width: 14px; height: 14px; flex-shrink: 0; color: #8a5310; }"
+    },
+    {
+      "name": "Meta Chip (small)",
+      "kind": "chip",
+      "refersTo": "chip-meta-sm",
+      "description": "The recipe-card size of the same chip; used wherever four cards share a row.",
+      "html": "<span class=\"ds-chip-sm\"><svg class=\"ds-chip-sm-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z\"/></svg>620 cal</span>",
+      "css": ".ds-chip-sm { display: inline-flex; align-items: center; gap: 6px; padding: 4px 8px; border: 1px solid #e8e3db; border-radius: 9999px; background: #faf8f5; color: #131110; font-family: Inter, system-ui, sans-serif; font-size: 11px; font-weight: 500; font-variant-numeric: tabular-nums; } .ds-chip-sm-icon { width: 12px; height: 12px; flex-shrink: 0; color: #8a5310; }"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "input-search",
+      "description": "The header's only control. The wrapper carries the focus state, not the input.",
+      "html": "<label class=\"ds-search\"><svg class=\"ds-search-icon\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input type=\"search\" placeholder=\"Search\" aria-label=\"Search recipes\" class=\"ds-search-input\"></label>",
+      "css": ".ds-search { display: flex; align-items: center; gap: 8px; height: 40px; width: 220px; padding: 0 16px; border: 1px solid #e8e3db; border-radius: 9999px; background: #faf8f5; transition: border-color 200ms, background-color 200ms; } .ds-search:focus-within { border-color: #f0b429; background: #ffffff; } .ds-search-icon { width: 16px; height: 16px; flex-shrink: 0; color: #6f6862; transition: color 200ms; } .ds-search:focus-within .ds-search-icon { color: #8a5310; } .ds-search-input { width: 100%; border: 0; background: transparent; font-family: Inter, system-ui, sans-serif; font-size: 14px; color: #131110; } .ds-search-input::placeholder { color: #6f6862; } .ds-search-input:focus { outline: none; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Uppercase wide-tracked label with a 2px underline that turns gold when active.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Primary\"><a href=\"#\" class=\"ds-nav-link ds-nav-link-active\" aria-current=\"page\">Recipes</a><a href=\"#\" class=\"ds-nav-link\">Ingredients</a><a href=\"#\" class=\"ds-nav-link\">About</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 36px; } .ds-nav-link { padding-bottom: 4px; border-bottom: 2px solid transparent; color: #6f6862; text-decoration: none; font-family: Inter, system-ui, sans-serif; font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; transition: color 200ms, border-color 200ms; } .ds-nav-link:hover { color: #131110; border-bottom-color: #e8e3db; } .ds-nav-link-active { color: #131110; border-bottom-color: #f0b429; } .ds-nav-link:focus-visible { outline: 2px solid #8a5310; outline-offset: 4px; }"
+    },
+    {
+      "name": "Accent Link",
+      "kind": "custom",
+      "refersTo": "link-accent",
+      "description": "The 'see all' affordance. Gold-deep text with an arrow that travels 4px on hover.",
+      "html": "<a href=\"#\" class=\"ds-link\">See all 42<svg class=\"ds-link-arrow\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-link { display: inline-flex; align-items: center; gap: 6px; color: #8a5310; text-decoration: none; font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: 600; transition: color 200ms; } .ds-link:hover { color: #131110; } .ds-link-arrow { width: 16px; height: 16px; transition: transform 200ms cubic-bezier(0, 0, 0.2, 1); } .ds-link:hover .ds-link-arrow { transform: translateX(4px); } .ds-link:focus-visible { outline: 2px solid #8a5310; outline-offset: 4px; } @media (prefers-reduced-motion: reduce) { .ds-link-arrow { transition: none; } .ds-link:hover .ds-link-arrow { transform: none; } }"
+    },
+    {
+      "name": "Recipe Card",
+      "kind": "card",
+      "refersTo": "card-surface",
+      "description": "A clipped 4:3 image, a tight Archivo title that underlines on hover, and a meta row pinned to the bottom.",
+      "html": "<article class=\"ds-card\"><a href=\"#\" class=\"ds-card-link\"><div class=\"ds-card-frame\"><div class=\"ds-card-img\"></div></div><h3 class=\"ds-card-title\">Charred broccolini with anchovy butter</h3></a><div class=\"ds-card-meta\"><span class=\"ds-chip-sm\">25 min</span><span class=\"ds-chip-sm\">310 cal</span></div></article>",
+      "css": ".ds-card { display: flex; flex-direction: column; height: 100%; width: 260px; } .ds-card-link { text-decoration: none; display: block; } .ds-card-link:focus-visible { outline: 2px solid #8a5310; outline-offset: 4px; } .ds-card-frame { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 8px; background: #faf8f5; } .ds-card-img { position: absolute; inset: 0; background: linear-gradient(135deg, #e8e3db, #d8d2c8); transition: transform 500ms cubic-bezier(0, 0, 0.2, 1); } .ds-card-link:hover .ds-card-img { transform: scale(1.03); } .ds-card-title { margin: 12px 0 0; font-family: Archivo, system-ui, sans-serif; font-size: 17px; font-weight: 700; line-height: 1.375; letter-spacing: -0.02em; color: #131110; text-underline-offset: 4px; text-decoration-color: #8a5310; text-decoration-thickness: 2px; } .ds-card-link:hover .ds-card-title { text-decoration-line: underline; } .ds-card-meta { margin-top: auto; padding-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }"
+    },
+    {
+      "name": "Panel Card",
+      "kind": "card",
+      "refersTo": "card-surface",
+      "description": "The ingredient library container: paper ground, hairline rule, 12px corners, 20px padding.",
+      "html": "<section class=\"ds-panel\"><h2 class=\"ds-panel-title\">Ingredient library</h2><p class=\"ds-panel-sub\">42 ingredients I stand behind</p></section>",
+      "css": ".ds-panel { border: 1px solid #e8e3db; border-radius: 12px; background: #ffffff; padding: 20px; width: 280px; } .ds-panel-title { margin: 0; font-family: Archivo, system-ui, sans-serif; font-size: 24px; font-weight: 800; letter-spacing: -0.03em; color: #131110; } .ds-panel-sub { margin: 4px 0 0; font-family: Inter, system-ui, sans-serif; font-size: 14px; color: #6f6862; }"
+    },
+    {
+      "name": "Wordmark",
+      "kind": "custom",
+      "description": "Lowercase Archivo 800 with a gold-deep period. The period is the logo.",
+      "html": "<a href=\"#\" class=\"ds-wordmark\">recipes<span class=\"ds-wordmark-dot\">.</span></a>",
+      "css": ".ds-wordmark { font-family: Archivo, system-ui, sans-serif; font-size: 20px; font-weight: 800; text-transform: lowercase; letter-spacing: -0.035em; color: #131110; text-decoration: none; } .ds-wordmark-dot { color: #8a5310; } .ds-wordmark:focus-visible { outline: 2px solid #8a5310; outline-offset: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Kitchen Notebook",
+    "overview": "This is one cook's working record, published. The page behaves like a well-kept\nnotebook left open on a counter: white paper, a warm off-white for anything set\naside from the page, hairline rules where a notebook would have printed lines,\nand a single gold accent that functions the way a pencil underline does — it\nmarks the thing the author is vouching for, and it means nothing if it is\neverywhere.\n\nNothing here is styled to look expensive. The surface is deliberately quiet so\nthat photography and the recipe titles carry all of the visual weight. Depth is\nachieved by ruling and tonal steps, never by shadow: a card is separated from the\npage because it sits on `wash` (#faf8f5) inside a 1px `rule` (#e8e3db) border, not\nbecause it floats above it. Type does the shouting — Archivo at 800 weight with\ntight negative tracking gives titles a compressed, editorial compaction, while\nInter handles every piece of running text and every label at sizes that survive a\nglance from an arm's length away.\n\nThe reading scene is a constraint, not a flourish. A cook is standing up, hands\nbusy, phone or laptop propped at a distance, looking for their place between\nsteps. That is why meta information (time, calories, brand picks) is set in pill\nchips with tabular numerals rather than in a paragraph, why hit targets stay\ngenerous, and why the accent color is reserved rather than decorative.",
+    "keyCharacteristics": [
+      "Paper-white ground (#ffffff) with wash (#faf8f5) as the only recessed surface.",
+      "Zero shadows anywhere; 1px hairline rules and tonal steps carry all separation.",
+      "One accent hue in two roles: gold (#f0b429) for marks and states, gold-deep (#8a5310) for anything text-sized that must stay legible.",
+      "Archivo 800 with -0.035em tracking for titles; Inter for everything else.",
+      "Uppercase, wide-tracked (0.14em-0.24em) Inter for nav and eyebrow labels.",
+      "Motion is limited to a 1.03 image scale and 200ms color transitions, always with a motion-reduce escape."
+    ],
+    "rules": [
+      {
+        "name": "The Underline Rule",
+        "body": "Gold marks endorsement and state, nothing else. If an element is gold and is neither the active thing, the focused thing, nor the thing the author is standing behind, remove the gold.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Golds Rule",
+        "body": "gold (#f0b429) is for marks, borders, and fills seen at a glance; gold-deep (#8a5310) is for anything read as text or drawn as an icon. Never set text in #f0b429 on a light ground.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Surfaces Rule",
+        "body": "The system has exactly two grounds - paper and wash. A third tone is not a new token, it is a mistake.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tight-Title Rule",
+        "body": "Every Archivo setting carries negative tracking scaled to its size (-0.02em at 17px, -0.035em at 28px and above). Archivo at default tracking looks unset in this system.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Any numeral a cook compares across cards - times, calories, counts - is set tabular-nums.",
+        "section": "typography"
+      },
+      {
+        "name": "The Equal-Height Rule",
+        "body": "In the lg two-column band both cards stretch to a shared height; the ingredient card's list uses auto-rows-fr and flex-1 so the extra height is absorbed by the thumbnails, never by trailing whitespace.",
+        "section": "layout"
+      },
+      {
+        "name": "The No-Shadow Rule",
+        "body": "box-shadow is not part of this system, at rest or in any state. If an element needs separation, it gets a rule or a tonal step.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Hairline Rule",
+        "body": "Every border in the system is exactly 1px #e8e3db. The only exceptions are the 2px gold underline on the active nav link and the 2px focus-visible outline.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do separate surfaces with a 1px #e8e3db rule or the #ffffff to #faf8f5 tonal step - the two mechanisms this system has.",
+      "Do set every Archivo heading with negative tracking (-0.02em at 17px, -0.035em at 28px+).",
+      "Do use gold-deep (#8a5310) for any accent that will be read as text or drawn as an icon, and gold (#f0b429) only for marks, borders, and fills.",
+      "Do put time and calories on every surface where a recipe is shown, in tabular-nums meta chips.",
+      "Do pair every transform or transition with a motion-reduce variant.",
+      "Do give every interactive element a focus-visible gold-deep outline.",
+      "Do clip images with a fixed-aspect overflow-hidden container and object-cover."
+    ],
+    "donts": [
+      "Don't add box-shadow to anything, in any state.",
+      "Don't introduce a third surface tone, a fourth radius, or a second accent hue.",
+      "Don't set body text or small text in #f0b429 - it fails contrast on light grounds.",
+      "Don't use pure black (#000) or pure gray; ink is warm (#131110) and muted is warm (#6f6862).",
+      "Don't introduce a serif or a third typeface; the pairing is Archivo + Inter.",
+      "Don't let the accent spread - if more than a few percent of a screen is gold, the Underline Rule is being broken.",
+      "Don't invent testimonials, ratings, counts, or badges; the site has no social proof and must not imply any."
+    ]
+  }
+}
