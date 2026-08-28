@@ -1,6 +1,18 @@
-import { Menu, Search } from "lucide-react";
+import { Search } from "lucide-react";
 
 import { navLinks, siteName } from "../data";
+
+function Wordmark({ className }: { className?: string }) {
+  return (
+    <a
+      href="#"
+      className={`font-display font-extrabold lowercase tracking-[-0.035em] text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-deep ${className ?? ""}`}
+    >
+      {siteName}
+      <span className="text-gold-deep">.</span>
+    </a>
+  );
+}
 
 function SearchField() {
   return (
@@ -28,7 +40,7 @@ function NavList({ className }: { className?: string }) {
           key={link.label}
           href={link.href}
           aria-current={link.active ? "page" : undefined}
-          className={`border-b-2 pb-1 font-body text-[13px] font-medium uppercase tracking-[0.14em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-deep ${
+          className={`shrink-0 border-b-2 pb-1 font-body text-[13px] font-medium uppercase tracking-[0.14em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-deep ${
             link.active
               ? "border-gold text-ink"
               : "border-transparent text-muted hover:border-rule hover:text-ink"
@@ -42,41 +54,24 @@ function NavList({ className }: { className?: string }) {
 }
 
 export function SiteHeader() {
+  // Sticky from md up only: the two-row mobile header would cost too much of a phone viewport.
   return (
-    <header className="border-b border-rule bg-paper">
+    <header className="z-40 border-b border-rule bg-paper md:sticky md:top-0">
       <div className="mx-auto w-full max-w-[1440px] px-6">
         <div className="hidden h-20 grid-cols-[1fr_auto_1fr] items-center gap-8 md:grid">
-          <a
-            href="#"
-            className="justify-self-start font-display text-xl font-extrabold lowercase tracking-[-0.035em] text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-deep"
-          >
-            {siteName}
-            <span className="text-gold">.</span>
-          </a>
+          <Wordmark className="justify-self-start text-xl" />
           <NavList className="flex items-center gap-9 justify-self-center" />
           <div className="justify-self-end">
             <SearchField />
           </div>
         </div>
 
+        {/* Under md the three links sit on their own row, so no disclosure control is needed. */}
         <div className="md:hidden">
-          <div className="flex h-16 items-center justify-between">
-            <a
-              href="#"
-              className="font-display text-lg font-extrabold lowercase tracking-[-0.035em] text-ink"
-            >
-              {siteName}
-              <span className="text-gold">.</span>
-            </a>
-            <button
-              type="button"
-              aria-label="Open menu"
-              className="-mr-2 flex size-10 items-center justify-center rounded-full text-ink transition-colors duration-200 hover:bg-wash focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep"
-            >
-              <Menu className="size-5" strokeWidth={2.25} aria-hidden="true" />
-            </button>
+          <div className="flex h-16 items-center">
+            <Wordmark className="text-lg" />
           </div>
-          <NavList className="flex items-center gap-7 pb-3" />
+          <NavList className="-mx-6 flex items-center gap-7 overflow-x-auto px-6 pb-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" />
         </div>
       </div>
     </header>

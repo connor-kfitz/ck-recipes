@@ -98,7 +98,7 @@ export const ingredientLibrary: IngredientLibrary = {
 
 export const recentHeading = "Recent";
 
-export const recentLinkLabel = "see all 42";
+export const recentLinkLabel = "See all 42";
 
 export const recentRecipes: Recipe[] = [
   {

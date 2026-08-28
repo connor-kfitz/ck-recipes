@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Clock, Flame, Tag } from "lucide-react";
+import { Clock, Flame, Pin, Tag } from "lucide-react";
 
 import { MetaChip } from "./MetaChip";
 import { pinnedRecipe } from "../data";
@@ -7,19 +7,20 @@ import { pinnedRecipe } from "../data";
 export function PinnedRecipe() {
   return (
     <section aria-labelledby="pinned-title">
-      <p className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-gold-deep">
-        {pinnedRecipe.eyebrow}
-      </p>
-
-      <div className="group relative mt-4 aspect-[16/9] overflow-hidden rounded-xl bg-wash">
+      <div className="group relative aspect-[16/9] overflow-hidden rounded-xl bg-wash">
         <Image
           src={pinnedRecipe.image}
           alt={pinnedRecipe.imageAlt}
           fill
-          priority
+          preload
           sizes="(max-width: 1023px) 100vw, 870px"
-          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
         />
+        {/* State marker, not a heading label: it says which recipe is pinned right now. */}
+        <p className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-paper/95 px-3 py-1.5 font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-ink shadow-[0_2px_10px_rgba(19,17,16,0.14)]">
+          <Pin className="size-3 text-gold-deep" strokeWidth={2.5} aria-hidden="true" />
+          {pinnedRecipe.eyebrow}
+        </p>
       </div>
 
       <h2

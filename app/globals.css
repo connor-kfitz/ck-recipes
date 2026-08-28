@@ -18,6 +18,8 @@ html {
   background: #ffffff;
   color-scheme: light;
   scrollbar-color: #d8d2c8 #ffffff;
+  /* Clears the sticky header when an in-page anchor is targeted. */
+  scroll-padding-top: 6rem;
 }
 
 .site-root ::selection {
