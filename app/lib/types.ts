@@ -110,6 +110,7 @@ export type RecipeDetail = {
   cookMinutes: number
   nutrition?: Nutrition
   ingredients: RecipeIngredient[]
+  equipmentIds?: string[]
   directions: DirectionStep[]
   tips: RecipeTip[]
 }
@@ -188,6 +189,60 @@ export type IngredientGroup = {
 
 export type IngredientCategoryCount = {
   id: IngredientCategoryFilter
+  label: string
+  count: number
+}
+
+export type Product = {
+  name: string
+  brand?: string
+  image: string
+  imageAlt: string
+}
+
+export type EquipmentCategoryId =
+  | "cookware"
+  | "bakeware"
+  | "knives"
+  | "tools"
+  | "appliances"
+
+export type EquipmentCategory = {
+  id: EquipmentCategoryId
+  label: string
+}
+
+export type EquipmentDetail = {
+  blurb: string
+  purchaseUrl?: string
+  purchaseNote?: string
+}
+
+export type Equipment = {
+  id: string
+  name: string
+  brand?: string
+  category: EquipmentCategoryId
+  image: string
+  imageAlt: string
+  detail?: EquipmentDetail
+}
+
+export type EquipmentCategoryFilter = EquipmentCategoryId | "all"
+
+export type EquipmentFilters = {
+  category: EquipmentCategoryFilter
+  query: string
+}
+
+export type EquipmentGroup = {
+  id: EquipmentCategoryId
+  label: string
+  items: Equipment[]
+}
+
+export type EquipmentCategoryCount = {
+  id: EquipmentCategoryFilter
   label: string
   count: number
 }

@@ -1,4 +1,6 @@
 import type {
+  Equipment,
+  EquipmentCategory,
   Ingredient,
   IngredientCategory,
   IngredientLibrary,
@@ -17,7 +19,8 @@ export const siteName = "recipes"
 export const navLinks: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "Recipes", href: "/recipes" },
-  { label: "Ingredients", href: "/ingredients" }
+  { label: "Ingredients", href: "/ingredients" },
+  { label: "Equipment", href: "/equipment" }
 ]
 
 export const pinnedRecipe: PinnedRecipe = {
@@ -137,6 +140,64 @@ export const ingredientCategories: IngredientCategory[] = [
   { id: "tools", label: "Tools" }
 ]
 
+export const equipment: Equipment[] = [
+  {
+    id: "dutch-oven",
+    name: "Enameled Dutch oven",
+    category: "cookware",
+    image: photo("1590794056226-79ef3a8147e1", 600, 600),
+    imageAlt: "Orange enameled Dutch oven on a trivet against white tile",
+    detail: {
+      blurb:
+        "Heavy enough to hold a steady simmer for hours and goes straight from the stovetop into the oven. The enamel means nothing acidic reacts with it, so braises and tomato sauces stay clean-tasting.",
+      purchaseNote: "5.5 qt · the size I reach for most"
+    }
+  },
+  {
+    id: "stockpot",
+    name: "Stainless stockpot",
+    category: "cookware",
+    image: photo("1556911220-bff31c812dba", 600, 600),
+    imageAlt: "Stainless steel stockpot on a gas range in a white kitchen"
+  },
+  {
+    id: "knife-set",
+    name: "Chef's knife set",
+    category: "knives",
+    image: photo("1593618998160-e34014e67546", 600, 600),
+    imageAlt: "Three wooden-handled knives, a carving fork and a honing steel above a leather roll"
+  },
+  {
+    id: "blender",
+    name: "High-speed blender",
+    category: "appliances",
+    image: photo("1585515320310-259814833e62", 600, 600),
+    imageAlt: "Glass blender jar filled with chopped fruit against a blue sky"
+  },
+  {
+    id: "stand-mixer",
+    name: "Stand mixer",
+    category: "appliances",
+    image: photo("1586208958839-06c17cacdf08", 600, 600),
+    imageAlt: "Cream stand mixer on a counter beside a built-in oven and green cabinets"
+  },
+  {
+    id: "toaster-oven",
+    name: "Countertop toaster oven",
+    category: "appliances",
+    image: photo("1574269909862-7e1d70bb8078", 600, 600),
+    imageAlt: "Stainless countertop toaster oven with its door closed"
+  }
+]
+
+export const equipmentCategories: EquipmentCategory[] = [
+  { id: "cookware", label: "Cookware" },
+  { id: "bakeware", label: "Bakeware" },
+  { id: "knives", label: "Knives" },
+  { id: "tools", label: "Tools" },
+  { id: "appliances", label: "Appliances" }
+]
+
 const misoButterNoodles: RecipeDetail = {
   serves: 2,
   prepMinutes: 10,
@@ -151,6 +212,7 @@ const misoButterNoodles: RecipeDetail = {
     { amount: "2", name: "scallions", calories: 10 },
     { amount: "to taste", name: "flaky salt", ingredientId: "flaky-salt" }
   ],
+  equipmentIds: ["stockpot"],
   directions: [
     {
       body: [

@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { ChipLink, RailLink } from "../components/FilterLinks"
-import { IngredientTile } from "../components/IngredientTile"
+import { ProductTile } from "../components/ProductTile"
 import { SearchField } from "../components/SearchField"
 import { FILTER_LABEL_CLASS } from "../lib/classes"
 import {
@@ -118,8 +118,9 @@ export default async function IngredientsPage(props: PageProps<"/ingredients">) 
                 <ul className="mt-4 hidden grid-cols-3 gap-5 sm:grid lg:grid-cols-5">
                   {group.items.map((ingredient) => (
                     <li key={ingredient.id}>
-                      <IngredientTile
-                        ingredient={ingredient}
+                      <ProductTile
+                        product={ingredient}
+                        href={`/ingredients/${ingredient.id}`}
                         sizes="(max-width: 1023px) 33vw, 200px"
                       />
                     </li>

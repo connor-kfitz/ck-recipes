@@ -1,4 +1,4 @@
-import { IngredientTile } from "./IngredientTile"
+import { ProductTile } from "./ProductTile"
 import type { Ingredient } from "../lib/types"
 
 type RecipeBrandPicksProps = {
@@ -22,7 +22,7 @@ export function RecipeBrandPicks({ picks }: RecipeBrandPicksProps) {
       <ul className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
         {picks.map((pick) => (
           <li key={pick.id}>
-            <IngredientTile ingredient={pick} frame="paper"/>
+            <ProductTile product={pick} href={`/ingredients/${pick.id}`} frame="paper"/>
           </li>
         ))}
       </ul>

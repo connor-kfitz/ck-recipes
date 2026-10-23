@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-import { IngredientTile } from "../../components/IngredientTile"
+import { ProductTile } from "../../components/ProductTile"
 import { MetaStrip } from "../../components/MetaStrip"
 import { RecipeListRow } from "../../components/RecipeListRow"
 import { ingredients } from "../../data"
@@ -188,8 +188,9 @@ export default async function IngredientPage(props: PageProps<"/ingredients/[slu
               <ul className="-mx-6 mt-4 flex snap-x gap-4 overflow-x-auto px-6 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:grid-cols-6">
                 {alsoIn.map((other) => (
                   <li key={other.id} className="w-40 shrink-0 snap-start sm:w-auto">
-                    <IngredientTile
-                      ingredient={other}
+                    <ProductTile
+                      product={other}
+                      href={`/ingredients/${other.id}`}
                       frame="paper"
                       sizes="(max-width: 639px) 160px, 200px"
                     />
