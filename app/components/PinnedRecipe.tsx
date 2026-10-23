@@ -30,7 +30,6 @@ export function PinnedRecipe() {
       <div className="mt-5 flex flex-wrap items-baseline font-body text-[15px] font-medium tabular-nums text-ink">
         <span className="border-l border-rule px-[11px] first:border-l-0 first:pl-0">{pinnedRecipe.time}</span>
         <span className="border-l border-rule px-[11px] first:border-l-0 first:pl-0">{pinnedRecipe.calories}</span>
-        <span className="border-l border-rule px-[11px] first:border-l-0 first:pl-0">{pinnedRecipe.brandPicks}</span>
       </div>
     </section>
   )

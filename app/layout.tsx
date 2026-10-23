@@ -1,3 +1,5 @@
+import { SiteFooter } from "./components/SiteFooter"
+import { SiteHeader } from "./components/SiteHeader"
 import type { Metadata } from "next"
 import { Archivo, Inter } from "next/font/google"
 
@@ -25,7 +27,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${archivo.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="site-root flex min-h-full flex-col bg-paper font-body text-ink">
+        <SiteHeader/>
         {children}
+        <SiteFooter/>
       </body>
     </html>
   )

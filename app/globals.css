@@ -29,3 +29,29 @@ html {
 .site-root {
   caret-color: #8a5310;
 }
+
+@media print {
+  header,
+  footer {
+    display: none !important;
+  }
+
+  html {
+    scroll-padding-top: 0;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  li,
+  table,
+  figure {
+    break-inside: avoid;
+  }
+
+  a {
+    text-decoration: none;
+    color: #131110;
+  }
+}

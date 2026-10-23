@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f0eee9;font-family:'Patrick Hand',system-ui,sans-serif}
+a{color:#2a78d6}a:hover{color:#1b5aa8}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#1a1a1a}
+.dv-opts{display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.55)}
+.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}
+.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}
+.dv-next{margin:22px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}
+.ph{background:repeating-linear-gradient(45deg,#e8e6e1 0 6px,#dedbd4 6px 12px);display:flex;align-items:center;justify-content:center;font:10px ui-monospace,Menlo,monospace;color:#8b8880;text-align:center;padding:4px}
+.note{font:11px/1.5 ui-monospace,Menlo,monospace;color:rgba(0,0,0,.5);max-width:640px;margin:2px 0 0}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:8px 20px;background:#f6f5f1;border-bottom:1px solid #e5e3dd;font:11px ui-monospace;color:#a8a59e}
+.chrome{display:flex;gap:5px}.dot{width:9px;height:9px;border-radius:50%;background:#dedbd4}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 48px;border-bottom:1px solid #e5e3dd}
+.navlinks{display:flex;gap:28px;font:16px 'Patrick Hand';color:#6b6862}
+.h1{font:700 34px/1.1 'Gaegu',cursive;color:#1a1a1a}
+.h2{font:700 22px 'Gaegu',cursive;color:#1a1a1a}
+.mono{font:11px ui-monospace;color:#8b8880}
+</style></helmet>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Personal recipe app — five screens, desktop-first (1280px frames) with mobile notes</span></div>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Home — recipe cards front and center, no blog hero</div>
+<div class="dv-card" style="width:1280px">
+  <div class="bar"><div class="chrome"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div><div>whaticook.example / home</div><div style="width:40px"></div></div>
+  <div class="nav">
+    <div style="font:700 24px 'Gaegu',cursive">what i cook</div>
+    <div class="navlinks"><span style="color:#1a1a1a;border-bottom:2px solid #1a1a1a">Home</span><span>Recipes</span><span>Ingredients</span></div>
+    <div style="border:1px solid #cfcdc7;border-radius:20px;padding:7px 16px;width:220px;font:14px 'Patrick Hand';color:#8b8880">⌕  Search</div>
+  </div>
+  <div style="padding:36px 48px 44px">
+    <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:32px;align-items:start">
+      <div>
+        <div class="mono" style="letter-spacing:.08em">PINNED</div>
+        <div class="ph" style="height:300px;border-radius:8px;margin-top:8px">wide featured photo</div>
+        <div style="font:700 28px 'Gaegu',cursive;margin-top:12px">The weeknight roast chicken</div>
+        <div class="mono" style="margin-top:4px">1 hr 15 min · 690 cal/serving · 8 brand picks</div>
+      </div>
+      <div style="border:1px dashed #cfcdc7;border-radius:8px;padding:20px">
+        <div class="h2">Ingredients</div>
+        <div class="mono" style="margin-top:4px">42 ingredients I stand behind</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px">
+          <div class="ph" style="height:74px;border-radius:5px">product</div>
+          <div class="ph" style="height:74px;border-radius:5px">product</div>
+          <div class="ph" style="height:74px;border-radius:5px">product</div>
+          <div class="ph" style="height:74px;border-radius:5px">product</div>
+        </div>
+        <div style="margin-top:16px;font:15px 'Patrick Hand'">Browse all →</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin:44px 0 14px">
+      <div class="h2">Recent</div><div class="mono">see all 42 →</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px">
+      <div><div class="ph" style="height:150px;border-radius:6px">recipe photo</div><div style="font:18px 'Patrick Hand';margin-top:7px">Miso butter noodles</div><div class="mono">25 min · 540 cal</div></div>
+      <div><div class="ph" style="height:150px;border-radius:6px">recipe photo</div><div style="font:18px 'Patrick Hand';margin-top:7px">Sunday chili</div><div class="mono">2 hr · 610 cal</div></div>
+      <div><div class="ph" style="height:150px;border-radius:6px">recipe photo</div><div style="font:18px 'Patrick Hand';margin-top:7px">Skillet cornbread</div><div class="mono">40 min · 320 cal</div></div>
+      <div><div class="ph" style="height:150px;border-radius:6px">recipe photo</div><div style="font:18px 'Patrick Hand';margin-top:7px">Green curry</div><div class="mono">35 min · 480 cal</div></div>
+      <div><div class="ph" style="height:150px;border-radius:6px">recipe photo</div><div style="font:18px 'Patrick Hand';margin-top:7px">Overnight focaccia</div><div class="mono">14 hr · 260 cal</div></div>
+      <div><div class="ph" style="height:150px;border-radius:6px">recipe photo</div><div style="font:18px 'Patrick Hand';margin-top:7px">Braised short ribs</div><div class="mono">3 hr · 780 cal</div></div>
+      <div><div class="ph" style="height:150px;border-radius:6px">recipe photo</div><div style="font:18px 'Patrick Hand';margin-top:7px">Lemon dal</div><div class="mono">30 min · 410 cal</div></div>
+      <div><div class="ph" style="height:150px;border-radius:6px">recipe photo</div><div style="font:18px 'Patrick Hand';margin-top:7px">Sesame slaw</div><div class="mono">15 min · 180 cal</div></div>
+    </div>
+  </div>
+</div>
+<p class="note">Content column capped ~1184px, centered. Mobile: nav collapses to wordmark + hamburger with a Home/Recipes/Brands row; pinned recipe stacks above the recent grid (photo, then title/meta); recent grid 4 → 2 columns; brand-library card becomes a single full-width row with a → chevron.</p>
+</div>
+
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Recipes — search + filter rail + card grid</div>
+<div class="dv-card" style="width:1280px">
+  <div class="bar"><div class="chrome"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div><div>whaticook.example / recipes</div><div style="width:40px"></div></div>
+  <div class="nav">
+    <div style="font:700 24px 'Gaegu',cursive">what i cook</div>
+    <div class="navlinks"><span>Home</span><span style="color:#1a1a1a;border-bottom:2px solid #1a1a1a">Recipes</span><span>Ingredients</span></div>
+    <div style="border:1px solid #cfcdc7;border-radius:20px;padding:7px 16px;width:220px;font:14px 'Patrick Hand';color:#8b8880">⌕  Search</div>
+  </div>
+  <div style="display:grid;grid-template-columns:220px 1fr;gap:0;align-items:start">
+    <div style="padding:32px 24px 40px 48px;border-right:1px solid #eceae4">
+      <div class="mono" style="letter-spacing:.08em">CATEGORY</div>
+      <div style="margin-top:10px;display:flex;flex-direction:column;gap:9px;font:16px 'Patrick Hand'">
+        <div style="display:flex;justify-content:space-between;color:#1a1a1a"><span style="border-bottom:2px solid #1a1a1a">All</span><span class="mono">42</span></div>
+        <div style="display:flex;justify-content:space-between;color:#6b6862"><span>Weeknight</span><span class="mono">18</span></div>
+        <div style="display:flex;justify-content:space-between;color:#6b6862"><span>Baking</span><span class="mono">7</span></div>
+        <div style="display:flex;justify-content:space-between;color:#6b6862"><span>Soup &amp; stew</span><span class="mono">6</span></div>
+        <div style="display:flex;justify-content:space-between;color:#6b6862"><span>Sides</span><span class="mono">6</span></div>
+        <div style="display:flex;justify-content:space-between;color:#6b6862"><span>Sweets</span><span class="mono">5</span></div>
+      </div>
+      <div class="mono" style="letter-spacing:.08em;margin-top:28px">TIME</div>
+      <div style="margin-top:10px;display:flex;flex-direction:column;gap:9px;font:16px 'Patrick Hand';color:#6b6862">
+        <div>Under 30 min</div><div>30–60 min</div><div>Over 1 hr</div>
+      </div>
+      <div class="mono" style="margin-top:24px">(filters optional — grid works without them)</div>
+    </div>
+    <div style="padding:32px 48px 44px 32px">
+      <div style="display:flex;gap:16px;align-items:center">
+        <div style="flex:1;border:1px solid #cfcdc7;border-radius:22px;padding:11px 18px;font:16px 'Patrick Hand';color:#8b8880">⌕  Search recipes or ingredients</div>
+        <div class="mono">sort: newest ▾</div>
+        <div style="display:flex;gap:6px"><div style="width:18px;height:18px;border:2px solid #1a1a1a"></div><div style="width:18px;height:18px;border:2px solid #cfcdc7"></div></div>
+      </div>
+      <div class="mono" style="margin-top:14px">42 recipes</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:14px">
+        <div><div class="ph" style="height:170px;border-radius:6px">recipe photo</div><div style="font:19px 'Patrick Hand';margin-top:8px">Miso butter noodles</div><div class="mono" style="margin-top:2px">25 min · 540 cal/serving</div><div class="mono">4 brand picks</div></div>
+        <div><div class="ph" style="height:170px;border-radius:6px">recipe photo</div><div style="font:19px 'Patrick Hand';margin-top:8px">Sunday chili</div><div class="mono" style="margin-top:2px">2 hr · 610 cal/serving</div><div class="mono">6 brand picks</div></div>
+        <div><div class="ph" style="height:170px;border-radius:6px">recipe photo</div><div style="font:19px 'Patrick Hand';margin-top:8px">Skillet cornbread</div><div class="mono" style="margin-top:2px">40 min · 320 cal/serving</div><div class="mono">3 brand picks</div></div>
+        <div><div class="ph" style="height:170px;border-radius:6px">recipe photo</div><div style="font:19px 'Patrick Hand';margin-top:8px">Green curry</div><div class="mono" style="margin-top:2px">35 min · 480 cal/serving</div><div class="mono">5 brand picks</div></div>
+        <div><div class="ph" style="height:170px;border-radius:6px">recipe photo</div><div style="font:19px 'Patrick Hand';margin-top:8px">Overnight focaccia</div><div class="mono" style="margin-top:2px">14 hr · 260 cal/serving</div><div class="mono">2 brand picks</div></div>
+        <div><div class="ph" style="height:170px;border-radius:6px">recipe photo</div><div style="font:19px 'Patrick Hand';margin-top:8px">Braised short ribs</div><div class="mono" style="margin-top:2px">3 hr · 780 cal/serving</div><div class="mono">7 brand picks</div></div>
+      </div>
+      <div style="margin-top:28px;text-align:center;font:16px 'Patrick Hand';color:#6b6862;border:1px solid #cfcdc7;border-radius:22px;padding:10px">Load more</div>
+    </div>
+  </div>
+</div>
+<p class="note">Mobile: filter rail collapses into a horizontal chip row under the search field (category only, time behind a "filters" sheet); grid 3 → 1 column as compact rows (76px thumb left, title + meta right) — the list/grid toggle stays available.</p>
+</div>
+
+<div class="dv-opt" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Recipe Detail — recipe above the fold, tips strictly below</div>
+<div class="dv-card" style="width:1280px">
+  <div class="bar"><div class="chrome"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div><div>whaticook.example / miso-butter-noodles</div><div style="width:40px"></div></div>
+  <div class="nav">
+    <div style="font:700 24px 'Gaegu',cursive">what i cook</div>
+    <div class="navlinks"><span>Home</span><span>Recipes</span><span>Ingredients</span></div>
+    <div style="border:1px solid #cfcdc7;border-radius:20px;padding:7px 16px;width:220px;font:14px 'Patrick Hand';color:#8b8880">⌕  Search</div>
+  </div>
+
+  <div style="padding:34px 48px 0;display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:start">
+    <div class="ph" style="height:340px;border-radius:8px">hero photo</div>
+    <div>
+      <div class="mono" style="letter-spacing:.08em">WEEKNIGHT</div>
+      <div class="h1" style="font-size:40px;margin-top:6px">Miso butter noodles</div>
+      <div style="display:flex;border:1px solid #e5e3dd;border-radius:6px;overflow:hidden;margin-top:18px;font:11px ui-monospace;color:#8b8880">
+        <div style="flex:1;padding:12px;text-align:center;border-right:1px solid #e5e3dd">SERVES<br><span style="font:20px 'Patrick Hand';color:#1a1a1a">2</span></div>
+        <div style="flex:1;padding:12px;text-align:center;border-right:1px solid #e5e3dd">PREP<br><span style="font:20px 'Patrick Hand';color:#1a1a1a">10 min</span></div>
+        <div style="flex:1;padding:12px;text-align:center;border-right:1px solid #e5e3dd">COOK<br><span style="font:20px 'Patrick Hand';color:#1a1a1a">15 min</span></div>
+        <div style="flex:1;padding:12px;text-align:center">TOTAL<br><span style="font:20px 'Patrick Hand';color:#1a1a1a">25 min</span></div>
+      </div>
+      <div style="margin-top:14px;border:1px solid #cfcdc7;border-radius:6px;overflow:hidden">
+        <div style="display:flex;font:11px ui-monospace;color:#8b8880;background:#f6f5f1;border-bottom:1px solid #e5e3dd">
+          <div style="flex:1.4;padding:8px 14px">NUTRITION</div><div style="flex:1;padding:8px;text-align:center">CAL</div><div style="flex:1;padding:8px;text-align:center">CARB</div><div style="flex:1;padding:8px;text-align:center">FAT</div><div style="flex:1;padding:8px;text-align:center">PROT</div>
+        </div>
+        <div style="display:flex;font:17px 'Patrick Hand';border-bottom:1px solid #eceae4">
+          <div style="flex:1.4;padding:9px 14px;color:#1a1a1a">per serving</div><div style="flex:1;padding:9px;text-align:center">540</div><div style="flex:1;padding:9px;text-align:center">62g</div><div style="flex:1;padding:9px;text-align:center">24g</div><div style="flex:1;padding:9px;text-align:center">18g</div>
+        </div>
+        <div style="display:flex;font:17px 'Patrick Hand';color:#6b6862">
+          <div style="flex:1.4;padding:9px 14px">whole recipe</div><div style="flex:1;padding:9px;text-align:center">1080</div><div style="flex:1;padding:9px;text-align:center">124g</div><div style="flex:1;padding:9px;text-align:center">48g</div><div style="flex:1;padding:9px;text-align:center">36g</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:16px;font:16px 'Patrick Hand';color:#6b6862">
+        <div style="border:1px solid #cfcdc7;border-radius:20px;padding:8px 18px">Cook mode</div>
+        <div style="border:1px solid #cfcdc7;border-radius:20px;padding:8px 18px">Print</div>
+        <div style="border:1px solid #cfcdc7;border-radius:20px;padding:8px 18px">Share</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:40px 48px 0;display:grid;grid-template-columns:360px 1fr;gap:48px;align-items:start">
+    <div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline">
+        <div class="h2">Ingredients</div><div class="mono">◆ = my brand pick</div>
+      </div>
+      <div style="margin-top:10px">
+        <div style="display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #eceae4"><div style="font:18px 'Patrick Hand'"><span style="color:#8b8880">8 oz</span> <span style="border-bottom:1.5px dotted #1a1a1a">ramen noodles</span> <span style="font:10px ui-monospace;padding:1px 6px;border:1px solid #cfcdc7;border-radius:9px;color:#555">◆ Sun Noodle</span></div><div class="mono">380</div></div>
+        <div style="display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #eceae4"><div style="font:18px 'Patrick Hand'"><span style="color:#8b8880">3 Tbsp</span> <span style="border-bottom:1.5px dotted #1a1a1a">white miso</span> <span style="font:10px ui-monospace;padding:1px 6px;border:1px solid #cfcdc7;border-radius:9px;color:#555">◆ Hikari</span></div><div class="mono">90</div></div>
+        <div style="display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #eceae4"><div style="font:18px 'Patrick Hand'"><span style="color:#8b8880">4 Tbsp</span> <span style="border-bottom:1.5px dotted #1a1a1a">butter</span> <span style="font:10px ui-monospace;padding:1px 6px;border:1px solid #cfcdc7;border-radius:9px;color:#555">◆ Kerrygold</span></div><div class="mono">400</div></div>
+        <div style="display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #eceae4"><div style="font:18px 'Patrick Hand'"><span style="color:#8b8880">2 cloves</span> garlic</div><div class="mono">9</div></div>
+        <div style="display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #eceae4"><div style="font:18px 'Patrick Hand'"><span style="color:#8b8880">1 tsp</span> <span style="border-bottom:1.5px dotted #1a1a1a">chili crisp</span> <span style="font:10px ui-monospace;padding:1px 6px;border:1px solid #cfcdc7;border-radius:9px;color:#555">◆ Fly By Jing</span></div><div class="mono">45</div></div>
+        <div style="display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #eceae4"><div style="font:18px 'Patrick Hand'"><span style="color:#8b8880">2</span> scallions</div><div class="mono">10</div></div>
+        <div style="display:flex;justify-content:space-between;gap:10px;padding:11px 0"><div style="font:18px 'Patrick Hand'"><span style="color:#8b8880">to taste</span> <span style="border-bottom:1.5px dotted #1a1a1a">flaky salt</span> <span style="font:10px ui-monospace;padding:1px 6px;border:1px solid #cfcdc7;border-radius:9px;color:#555">◆ Maldon</span></div><div class="mono">—</div></div>
+      </div>
+      <div class="mono" style="margin-top:12px;line-height:1.5">brand-linked names carry a dotted underline + badge and link to the ingredient's brand page — same treatment anywhere the ingredient is mentioned, including inside steps</div>
+    </div>
+    <div>
+      <div class="h2">Directions</div>
+      <div style="margin-top:12px;display:flex;flex-direction:column;gap:22px;max-width:620px">
+        <div style="display:flex;gap:16px"><div style="flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid #1a1a1a;display:flex;align-items:center;justify-content:center;font:14px ui-monospace">1</div><div style="font:18px/1.55 'Patrick Hand';color:#2a2a2a">Boil the <span style="border-bottom:1.5px dotted #1a1a1a">noodles</span> in <b>heavily salted</b> water, one minute under the package time. Reserve ½ cup of the water.</div></div>
+        <div style="display:flex;gap:16px"><div style="flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid #1a1a1a;display:flex;align-items:center;justify-content:center;font:14px ui-monospace">2</div><div><div class="mono" style="letter-spacing:.06em">MAKE THE SAUCE</div><div style="font:18px/1.55 'Patrick Hand';color:#2a2a2a;margin-top:4px">Melt the <span style="border-bottom:1.5px dotted #1a1a1a">butter</span> over low heat, then whisk in the <span style="border-bottom:1.5px dotted #1a1a1a">miso</span> until smooth. <b>Do not let it boil.</b></div><div style="margin-top:8px;padding-left:16px;font:17px/1.6 'Patrick Hand';color:#4a4a4a"><div>• garlic goes in last, off the heat</div><div>• thin with the pasta water a splash at a time</div></div></div></div>
+        <div style="display:flex;gap:16px"><div style="flex:none;width:30px;height:30px;border-radius:50%;border:1.5px solid #1a1a1a;display:flex;align-items:center;justify-content:center;font:14px ui-monospace">3</div><div style="font:18px/1.55 'Patrick Hand';color:#2a2a2a">Toss the noodles in the pan for 30 seconds so the sauce clings. Top with scallions and <span style="border-bottom:1.5px dotted #1a1a1a">chili crisp</span>.</div></div>
+      </div>
+      <div class="mono" style="margin-top:14px">steps render from markdown: headers, bold, nested lists</div>
+    </div>
+  </div>
+
+  <div style="margin-top:44px;border-top:6px solid #e5e3dd;background:#f8f7f4;padding:32px 48px 44px">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;max-width:1000px">
+      <div><div class="h2">Tips, notes &amp; learnings</div><div class="mono" style="margin-top:3px">everything I've figured out since — newest first</div></div>
+      <div class="mono">filter: all · tips · notes · learnings</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px">
+      <div style="background:#fff;border:1px solid #e5e3dd;border-radius:6px;padding:16px"><div style="display:flex;justify-content:space-between" class="mono"><span style="padding:2px 7px;border:1px solid #cfcdc7;border-radius:9px">LEARNING</span><span>Mar 2026</span></div><div style="font:17px/1.55 'Patrick Hand';margin-top:9px">Miso seizes if the butter is too hot — pull the pan off the burner before it goes in.</div></div>
+      <div style="background:#fff;border:1px solid #e5e3dd;border-radius:6px;padding:16px"><div style="display:flex;justify-content:space-between" class="mono"><span style="padding:2px 7px;border:1px solid #cfcdc7;border-radius:9px">TIP</span><span>Jan 2026</span></div><div style="font:17px/1.55 'Patrick Hand';margin-top:9px">Double the sauce and keep half in the fridge; it holds a week and makes any vegetable edible.</div></div>
+      <div style="background:#fff;border:1px solid #e5e3dd;border-radius:6px;padding:16px"><div style="display:flex;justify-content:space-between" class="mono"><span style="padding:2px 7px;border:1px solid #cfcdc7;border-radius:9px">NOTE</span><span>Nov 2025</span></div><div style="font:17px/1.55 'Patrick Hand';margin-top:9px">Swapped in udon once — needs a splash more pasta water and a shorter toss.</div></div>
+    </div>
+    <div style="margin-top:36px;max-width:1000px">
+      <div class="h2" style="font-size:19px">Brand picks in this recipe</div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:12px">
+        <div><div class="ph" style="height:92px;border-radius:5px">product</div><div style="font:15px 'Patrick Hand';margin-top:5px">White miso</div><div class="mono">Hikari</div></div>
+        <div><div class="ph" style="height:92px;border-radius:5px">product</div><div style="font:15px 'Patrick Hand';margin-top:5px">Butter</div><div class="mono">Kerrygold</div></div>
+        <div><div class="ph" style="height:92px;border-radius:5px">product</div><div style="font:15px 'Patrick Hand';margin-top:5px">Chili crisp</div><div class="mono">Fly By Jing</div></div>
+        <div><div class="ph" style="height:92px;border-radius:5px">product</div><div style="font:15px 'Patrick Hand';margin-top:5px">Ramen noodles</div><div class="mono">Sun Noodle</div></div>
+        <div><div class="ph" style="height:92px;border-radius:5px">product</div><div style="font:15px 'Patrick Hand';margin-top:5px">Flaky salt</div><div class="mono">Maldon</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<p class="note">Above the fold at 1280×800: hero + title + times + macro table, with ingredients starting to show. Ingredients column is sticky as directions scroll. Mobile: single column in this order — title, hero, times strip, macro table, ingredients, directions, then the separated tips band (cards stack 1-up, filter row becomes chips); "Brand picks in this recipe" becomes a 2-up grid.</p>
+</div>
+
+<div class="dv-opt" id="1d">
+<div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>Ingredients — grouped by category, thumbnail grid</div>
+<div class="dv-card" style="width:1280px">
+  <div class="bar"><div class="chrome"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div><div>whaticook.example / ingredients</div><div style="width:40px"></div></div>
+  <div class="nav">
+    <div style="font:700 24px 'Gaegu',cursive">what i cook</div>
+    <div class="navlinks"><span>Home</span><span>Recipes</span><span style="color:#1a1a1a;border-bottom:2px solid #1a1a1a">Ingredients</span></div>
+    <div style="border:1px solid #cfcdc7;border-radius:20px;padding:7px 16px;width:220px;font:14px 'Patrick Hand';color:#8b8880">⌕  Search</div>
+  </div>
+  <div style="display:grid;grid-template-columns:220px 1fr;align-items:start">
+    <div style="padding:32px 24px 40px 48px;border-right:1px solid #eceae4">
+      <div class="mono" style="letter-spacing:.08em">CATEGORIES</div>
+      <div style="margin-top:10px;display:flex;flex-direction:column;gap:9px;font:16px 'Patrick Hand'">
+        <div style="display:flex;justify-content:space-between;color:#1a1a1a"><span style="border-bottom:2px solid #1a1a1a">All</span><span class="mono">42</span></div>
+        <div style="display:flex;justify-content:space-between;color:#6b6862"><span>Pantry</span><span class="mono">11</span></div>
+        <div style="display:flex;justify-content:space-between;color:#6b6862"><span>Spices</span><span class="mono">9</span></div>
+        <div style="display:flex;justify-content:space-between;color:#6b6862"><span>Sauces</span><span class="mono">7</span></div>
+        <div style="display:flex;justify-content:space-between;color:#6b6862"><span>Produce</span><span class="mono">6</span></div>
+        <div style="display:flex;justify-content:space-between;color:#6b6862"><span>Dairy</span><span class="mono">5</span></div>
+        <div style="display:flex;justify-content:space-between;color:#6b6862"><span>Tools</span><span class="mono">4</span></div>
+      </div>
+    </div>
+    <div style="padding:32px 48px 44px 32px">
+      <div class="h1" style="font-size:30px">Ingredients</div>
+      <div class="mono" style="margin-top:4px">the exact products I buy — every one is linked from the recipes that use it</div>
+      <div style="border:1px solid #cfcdc7;border-radius:22px;padding:11px 18px;font:16px 'Patrick Hand';color:#8b8880;margin-top:18px;max-width:420px">⌕  Search ingredients or brands</div>
+
+      <div class="mono" style="letter-spacing:.08em;margin-top:30px;padding-bottom:8px;border-bottom:1px solid #e5e3dd">PANTRY · 11</div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:22px;margin-top:16px">
+        <div><div class="ph" style="height:120px;border-radius:6px">product shot</div><div style="font:17px 'Patrick Hand';margin-top:6px">Olive oil</div><div class="mono">Graza Sizzle</div></div>
+        <div><div class="ph" style="height:120px;border-radius:6px">product shot</div><div style="font:17px 'Patrick Hand';margin-top:6px">Canned tomatoes</div><div class="mono">Bianco DiNapoli</div></div>
+        <div><div class="ph" style="height:120px;border-radius:6px">product shot</div><div style="font:17px 'Patrick Hand';margin-top:6px">Ramen noodles</div><div class="mono">Sun Noodle</div></div>
+        <div><div class="ph" style="height:120px;border-radius:6px">product shot</div><div style="font:17px 'Patrick Hand';margin-top:6px">All-purpose flour</div><div class="mono">King Arthur</div></div>
+        <div><div class="ph" style="height:120px;border-radius:6px">product shot</div><div style="font:17px 'Patrick Hand';margin-top:6px">Dried beans</div><div class="mono">Rancho Gordo</div></div>
+      </div>
+
+      <div class="mono" style="letter-spacing:.08em;margin-top:34px;padding-bottom:8px;border-bottom:1px solid #e5e3dd">SPICES · 9</div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:22px;margin-top:16px">
+        <div><div class="ph" style="height:120px;border-radius:6px">product shot</div><div style="font:17px 'Patrick Hand';margin-top:6px">Flaky salt</div><div class="mono">Maldon</div></div>
+        <div><div class="ph" style="height:120px;border-radius:6px">product shot</div><div style="font:17px 'Patrick Hand';margin-top:6px">Smoked paprika</div><div class="mono">Burlap &amp; Barrel</div></div>
+        <div><div class="ph" style="height:120px;border-radius:6px">product shot</div><div style="font:17px 'Patrick Hand';margin-top:6px">Black pepper</div><div class="mono">Diaspora Co.</div></div>
+        <div><div class="ph" style="height:120px;border-radius:6px">product shot</div><div style="font:17px 'Patrick Hand';margin-top:6px">Cinnamon</div><div class="mono">Diaspora Co.</div></div>
+        <div><div class="ph" style="height:120px;border-radius:6px">product shot</div><div style="font:17px 'Patrick Hand';margin-top:6px">Chili flakes</div><div class="mono">brand</div></div>
+      </div>
+
+      <div class="mono" style="letter-spacing:.08em;margin-top:34px;padding-bottom:8px;border-bottom:1px solid #e5e3dd">SAUCES · 7</div>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:22px;margin-top:16px">
+        <div><div class="ph" style="height:120px;border-radius:6px">product shot</div><div style="font:17px 'Patrick Hand';margin-top:6px">White miso</div><div class="mono">Hikari Organic</div></div>
+        <div><div class="ph" style="height:120px;border-radius:6px">product shot</div><div style="font:17px 'Patrick Hand';margin-top:6px">Chili crisp</div><div class="mono">Fly By Jing</div></div>
+        <div><div class="ph" style="height:120px;border-radius:6px">product shot</div><div style="font:17px 'Patrick Hand';margin-top:6px">Soy sauce</div><div class="mono">Yamaroku</div></div>
+        <div><div class="ph" style="height:120px;border-radius:6px">product shot</div><div style="font:17px 'Patrick Hand';margin-top:6px">Fish sauce</div><div class="mono">Red Boat</div></div>
+        <div><div class="ph" style="height:120px;border-radius:6px">product shot</div><div style="font:17px 'Patrick Hand';margin-top:6px">Vinegar</div><div class="mono">brand</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<p class="note">Mobile: category rail becomes a scrolling tab strip pinned under the header; each group's 5-up grid becomes 52px-thumb rows (ingredient name over brand name, chevron right) so a whole category fits in one screen.</p>
+</div>
+
+<div class="dv-opt" id="1e">
+<div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a>Brand Detail — the pick, purchase link, "used in"</div>
+<div class="dv-card" style="width:1280px">
+  <div class="bar"><div class="chrome"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div><div>whaticook.example / ingredients / white-miso</div><div style="width:40px"></div></div>
+  <div class="nav">
+    <div style="font:700 24px 'Gaegu',cursive">what i cook</div>
+    <div class="navlinks"><span>Home</span><span>Recipes</span><span style="color:#1a1a1a;border-bottom:2px solid #1a1a1a">Ingredients</span></div>
+    <div style="border:1px solid #cfcdc7;border-radius:20px;padding:7px 16px;width:220px;font:14px 'Patrick Hand';color:#8b8880">⌕  Search</div>
+  </div>
+  <div style="padding:22px 48px 0" class="mono">← Ingredients · Sauces</div>
+  <div style="padding:18px 48px 0;display:grid;grid-template-columns:420px 1fr;gap:48px;align-items:start">
+    <div>
+      <div class="ph" style="height:340px;border-radius:8px">product shot (square, on white)</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px">
+        <div class="ph" style="height:76px;border-radius:5px">alt</div><div class="ph" style="height:76px;border-radius:5px">in use</div><div class="ph" style="height:76px;border-radius:5px">label</div>
+      </div>
+    </div>
+    <div>
+      <div class="mono" style="letter-spacing:.08em">HIKARI ORGANIC</div>
+      <div class="h1" style="font-size:40px;margin-top:6px">White miso</div>
+      <div style="font:19px/1.6 'Patrick Hand';color:#2a2a2a;margin-top:14px;max-width:560px">Mellow, not too salty, and it dissolves without clumping — the only one I've found that never turns a butter sauce grainy. Comes in a tub rather than a pouch, so it keeps for months in the fridge without drying at the edges.</div>
+      <div style="display:flex;gap:14px;margin-top:22px;align-items:center">
+        <div style="background:#1a1a1a;color:#fff;border-radius:22px;padding:11px 26px;font:17px 'Patrick Hand'">Where I buy it ↗</div>
+        <div class="mono">~$6 · 17.6 oz · most Asian groceries</div>
+      </div>
+      <div style="display:flex;gap:0;border:1px solid #e5e3dd;border-radius:6px;overflow:hidden;margin-top:24px;max-width:560px;font:11px ui-monospace;color:#8b8880">
+        <div style="flex:1;padding:11px;text-align:center;border-right:1px solid #e5e3dd">CATEGORY<br><span style="font:17px 'Patrick Hand';color:#1a1a1a">Sauces</span></div>
+        <div style="flex:1;padding:11px;text-align:center;border-right:1px solid #e5e3dd">CAL / TBSP<br><span style="font:17px 'Patrick Hand';color:#1a1a1a">30</span></div>
+        <div style="flex:1;padding:11px;text-align:center">USED IN<br><span style="font:17px 'Patrick Hand';color:#1a1a1a">6 recipes</span></div>
+      </div>
+
+      <div style="margin-top:34px">
+        <div class="h2">Used in</div>
+        <div class="mono" style="margin-top:3px">auto-generated from recipes that list this ingredient</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px;max-width:640px">
+          <div style="display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #eceae4"><div class="ph" style="width:64px;height:56px;border-radius:5px;flex:none">photo</div><div><div style="font:17px 'Patrick Hand'">Miso butter noodles</div><div class="mono">25 min · 540 cal</div></div></div>
+          <div style="display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #eceae4"><div class="ph" style="width:64px;height:56px;border-radius:5px;flex:none">photo</div><div><div style="font:17px 'Patrick Hand'">Miso glazed salmon</div><div class="mono">30 min · 460 cal</div></div></div>
+          <div style="display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #eceae4"><div class="ph" style="width:64px;height:56px;border-radius:5px;flex:none">photo</div><div><div style="font:17px 'Patrick Hand'">Weeknight ramen</div><div class="mono">20 min · 520 cal</div></div></div>
+          <div style="display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #eceae4"><div class="ph" style="width:64px;height:56px;border-radius:5px;flex:none">photo</div><div><div style="font:17px 'Patrick Hand'">Sesame slaw</div><div class="mono">15 min · 180 cal</div></div></div>
+          <div style="display:flex;gap:12px;align-items:center;padding:10px 0"><div class="ph" style="width:64px;height:56px;border-radius:5px;flex:none">photo</div><div><div style="font:17px 'Patrick Hand'">Braised greens</div><div class="mono">25 min · 210 cal</div></div></div>
+          <div style="display:flex;gap:12px;align-items:center;padding:10px 0"><div class="ph" style="width:64px;height:56px;border-radius:5px;flex:none">photo</div><div><div style="font:17px 'Patrick Hand'">Miso caramel</div><div class="mono">20 min · 290 cal</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:40px;border-top:1px solid #e5e3dd;background:#f8f7f4;padding:26px 48px 34px">
+    <div class="h2" style="font-size:19px">Also in Sauces</div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:20px;margin-top:12px">
+      <div><div class="ph" style="height:96px;border-radius:5px">product</div><div style="font:16px 'Patrick Hand';margin-top:5px">Chili crisp</div><div class="mono">Fly By Jing</div></div>
+      <div><div class="ph" style="height:96px;border-radius:5px">product</div><div style="font:16px 'Patrick Hand';margin-top:5px">Soy sauce</div><div class="mono">Yamaroku</div></div>
+      <div><div class="ph" style="height:96px;border-radius:5px">product</div><div style="font:16px 'Patrick Hand';margin-top:5px">Fish sauce</div><div class="mono">Red Boat</div></div>
+      <div><div class="ph" style="height:96px;border-radius:5px">product</div><div style="font:16px 'Patrick Hand';margin-top:5px">Vinegar</div><div class="mono">brand</div></div>
+      <div><div class="ph" style="height:96px;border-radius:5px">product</div><div style="font:16px 'Patrick Hand';margin-top:5px">Gochujang</div><div class="mono">brand</div></div>
+      <div><div class="ph" style="height:96px;border-radius:5px">product</div><div style="font:16px 'Patrick Hand';margin-top:5px">Tahini</div><div class="mono">Soom</div></div>
+    </div>
+  </div>
+</div>
+<p class="note">Mobile: single column — product shot full-bleed at top (alt thumbs become a swipe strip), then brand/ingredient name, blurb, purchase button full-width and sticky at the bottom on scroll; "Used in" collapses to one-column rows; "Also in Sauces" becomes a horizontal scroller.</p>
+</div>
+
+</div>
+<p class="dv-next">Try next: "tighten <a class="dv-oid" href="#1c">1c</a> so ingredients and step 1 both clear the fold" · "show the mobile versions of <a class="dv-oid" href="#1c">1c</a> and <a class="dv-oid" href="#1e">1e</a> as their own frames" · "new directions for the recipe page layout"</p>
+</section>
+
+</x-dc>
+</body>
+</html>
