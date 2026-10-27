@@ -5,7 +5,7 @@ import { pinnedRecipe } from "../data"
 export function PinnedRecipe() {
   return (
     <section aria-labelledby="pinned-title">
-      <p className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-gold-deep">
+      <p className="font-body text-[11px] font-semibold uppercase text-gold-deep">
         {pinnedRecipe.eyebrow}
       </p>
 
@@ -22,7 +22,7 @@ export function PinnedRecipe() {
 
       <h2
         id="pinned-title"
-        className="mt-6 max-w-[15ch] font-display text-[40px] font-extrabold leading-[0.98] tracking-[-0.035em] text-balance text-ink sm:text-[56px]"
+        className="mt-6 max-w-[15ch] font-display text-[40px] font-extrabold leading-[0.98] text-balance text-ink sm:text-[56px]"
       >
         {pinnedRecipe.title}
       </h2>

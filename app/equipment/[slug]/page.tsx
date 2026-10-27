@@ -80,11 +80,11 @@ export default async function EquipmentItemPage(props: PageProps<"/equipment/[sl
 
           <div>
             {item.brand === undefined ? null : (
-              <p className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-gold-deep">
+              <p className="font-body text-[11px] font-semibold uppercase text-gold-deep">
                 {item.brand}
               </p>
             )}
-            <h1 className="mt-2 font-display text-[40px] font-extrabold leading-[0.98] tracking-[-0.035em] text-balance text-ink">
+            <h1 className="mt-2 font-display text-[40px] font-extrabold leading-[0.98] text-balance text-ink">
               {item.name}
             </h1>
 
@@ -133,7 +133,7 @@ export default async function EquipmentItemPage(props: PageProps<"/equipment/[sl
             <section aria-labelledby="used-in-heading" className="mt-10">
               <h2
                 id="used-in-heading"
-                className="font-display text-[22px] font-extrabold tracking-[-0.03em] text-ink"
+                className="font-display text-[22px] font-extrabold text-ink"
               >
                 Used in
               </h2>
@@ -170,7 +170,7 @@ export default async function EquipmentItemPage(props: PageProps<"/equipment/[sl
             <section aria-labelledby="also-in-heading">
               <h2
                 id="also-in-heading"
-                className="font-display text-[19px] font-extrabold tracking-[-0.03em] text-ink"
+                className="font-display text-[19px] font-extrabold text-ink"
               >
                 Also in {categoryLabel}
               </h2>

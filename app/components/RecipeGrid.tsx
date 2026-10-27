@@ -11,7 +11,7 @@ export function RecipeGrid() {
       <div className="flex items-baseline justify-between gap-6 border-b border-rule pb-3">
         <h2
           id="recent-title"
-          className="font-display text-[28px] font-extrabold tracking-[-0.035em] text-ink"
+          className="font-display text-[28px] font-extrabold text-ink"
         >
           {recentHeading}
         </h2>
@@ -28,7 +28,7 @@ export function RecipeGrid() {
         </Link>
       </div>
 
-      <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-9 lg:grid-cols-4">
+      <div className="mt-6 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
         {recentRecipes.map((recipe) => (
           <RecipeCard key={recipe.id} recipe={recipe} href={recipeHref(recipe)}/>
         ))}

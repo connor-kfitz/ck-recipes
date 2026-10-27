@@ -14,7 +14,7 @@ export function RecipeBrandPicks({ picks }: RecipeBrandPicksProps) {
     <section aria-labelledby="brand-picks-heading" className="mt-12">
       <h2
         id="brand-picks-heading"
-        className="font-display text-[19px] font-extrabold tracking-[-0.03em] text-ink"
+        className="font-display text-[19px] font-extrabold text-ink"
       >
         Brand picks in this recipe
       </h2>

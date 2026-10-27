@@ -1,7 +1,7 @@
 import { SiteFooter } from "./components/SiteFooter"
 import { SiteHeader } from "./components/SiteHeader"
 import type { Metadata } from "next"
-import { Archivo, Inter } from "next/font/google"
+import { Archivo, Open_Sans } from "next/font/google"
 
 import "./globals.css"
 
@@ -10,8 +10,8 @@ const archivo = Archivo({
   subsets: ["latin"]
 })
 
-const inter = Inter({
-  variable: "--font-inter",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"]
 })
 
@@ -24,7 +24,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${archivo.variable} ${inter.variable} h-full antialiased`}
+      className={`${archivo.variable} ${openSans.variable} h-full antialiased`}
     >
       <body className="site-root flex min-h-full flex-col bg-paper font-body text-ink">
         <SiteHeader/>

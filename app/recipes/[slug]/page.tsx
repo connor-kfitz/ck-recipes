@@ -87,10 +87,10 @@ export default async function RecipePage(props: PageProps<"/recipes/[slug]">) {
           }
         >
           <div className={cookMode ? undefined : "lg:col-start-2 lg:row-start-1"}>
-            <p className="font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-gold-deep">
+            <p className="font-body text-[11px] font-semibold uppercase text-gold-deep">
               {categoryLabel}
             </p>
-            <h1 className="mt-2 font-display text-[40px] font-extrabold leading-[0.98] tracking-[-0.035em] text-balance text-ink sm:text-[48px]">
+            <h1 className="mt-2 font-display text-[40px] font-extrabold leading-[0.98] text-balance text-ink sm:text-[48px]">
               {recipe.title}
             </h1>
           </div>

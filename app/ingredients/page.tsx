@@ -31,7 +31,7 @@ export default async function IngredientsPage(props: PageProps<"/ingredients">) 
     <main className="mx-auto w-full max-w-[1440px] px-6 pt-8 pb-24">
       <div className="grid grid-cols-1 gap-y-5 md:grid-cols-[220px_1fr] md:grid-rows-[auto_1fr] md:gap-x-8 md:gap-y-7">
         <div className="md:col-start-2 md:row-start-1">
-          <h1 className="font-display text-[30px] font-extrabold tracking-[-0.035em] text-ink">
+          <h1 className="font-display text-[30px] font-extrabold text-ink">
             Ingredients
           </h1>
           <p className="mt-1.5 max-w-[60ch] font-body text-sm text-muted">
@@ -87,7 +87,7 @@ export default async function IngredientsPage(props: PageProps<"/ingredients">) 
 
           {groups.length === 0 ? (
             <div className="rounded-xl border border-rule bg-wash p-8 text-center">
-              <p className="font-display text-[17px] font-bold tracking-[-0.02em] text-ink">
+              <p className="font-display text-[17px] font-bold text-ink">
                 Nothing matches that yet.
               </p>
               <p className="mx-auto mt-2 max-w-[42ch] font-body text-sm text-muted">

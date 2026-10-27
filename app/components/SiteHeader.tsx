@@ -12,7 +12,7 @@ function Wordmark({ className }: WordmarkProps) {
   return (
     <Link
       href="/"
-      className={`font-display font-extrabold lowercase tracking-[-0.035em] text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-deep ${className ?? ""}`}
+      className={`font-logo font-extrabold lowercase text-ink focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-deep ${className ?? ""}`}
     >
       {siteName}
       <span className="text-gold-deep">.</span>

@@ -37,7 +37,7 @@ export function RecipeListRow({
       </div>
       <div className="min-w-0">
         <h3
-          className={`font-display font-bold leading-snug tracking-[-0.02em] text-ink ${
+          className={`font-display font-bold leading-snug text-ink ${
             compact ? "text-[15px]" : "text-[17px]"
           }`}
         >

@@ -8,7 +8,7 @@ type RecipeNutritionTableProps = {
 }
 
 const HEAD_CLASS =
-  "px-3 py-2 text-center font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-muted"
+  "px-3 py-2 text-center font-body text-[11px] font-semibold uppercase text-muted"
 
 const CELL_CLASS = "px-3 py-2.5 text-center font-body text-sm tabular-nums"
 
@@ -27,7 +27,7 @@ export function RecipeNutritionTable({
           <tr className="border-b border-rule bg-wash">
             <th
               scope="col"
-              className="px-4 py-2 text-left font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-muted"
+              className="px-4 py-2 text-left font-body text-[11px] font-semibold uppercase text-muted"
             >
               Nutrition
             </th>

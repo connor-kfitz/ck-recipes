@@ -23,7 +23,7 @@ export function NavList({ className }: NavListProps) {
             key={link.label}
             href={link.href}
             aria-current={active ? "page" : undefined}
-            className={`shrink-0 border-b-2 pb-1 font-body text-[13px] font-medium uppercase tracking-[0.14em] transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-deep ${
+            className={`shrink-0 border-b-2 pb-1 font-body text-[15px] font-medium transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep ${
               active
                 ? "border-gold text-ink"
                 : "border-transparent text-muted hover:border-rule hover:text-ink"

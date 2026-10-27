@@ -9,9 +9,10 @@
   --color-gold: #f0b429;
   --color-gold-deep: #8a5310;
 
-  --font-display: var(--font-archivo);
-  --font-body: var(--font-inter);
-  --font-sans: var(--font-inter);
+  --font-logo: var(--font-archivo);
+  --font-display: var(--font-open-sans);
+  --font-body: var(--font-open-sans);
+  --font-sans: var(--font-open-sans);
 }
 
 html {
@@ -19,11 +20,6 @@ html {
   color-scheme: light;
   scrollbar-color: #d8d2c8 #ffffff;
   scroll-padding-top: 6rem;
-}
-
-.site-root ::selection {
-  background: #f0b429;
-  color: #131110;
 }
 
 .site-root {

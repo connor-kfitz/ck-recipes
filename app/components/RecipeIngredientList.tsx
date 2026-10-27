@@ -20,7 +20,7 @@ export function RecipeIngredientList({
       <div className="flex items-baseline justify-between gap-4 border-b border-rule pb-2">
         <h2
           id="ingredients-heading"
-          className="font-display text-[22px] font-extrabold tracking-[-0.03em] text-ink"
+          className="font-display text-[22px] font-extrabold text-ink"
         >
           Ingredients
         </h2>

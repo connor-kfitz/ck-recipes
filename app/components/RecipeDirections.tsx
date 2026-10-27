@@ -48,7 +48,7 @@ export function RecipeDirections({ detail, cookMode = false }: RecipeDirectionsP
     <div>
       <h2
         id="directions-heading"
-        className="border-b border-rule pb-2 font-display text-[22px] font-extrabold tracking-[-0.03em] text-ink"
+        className="border-b border-rule pb-2 font-display text-[22px] font-extrabold text-ink"
       >
         Directions
       </h2>
@@ -64,7 +64,7 @@ export function RecipeDirections({ detail, cookMode = false }: RecipeDirectionsP
             </span>
             <div className="max-w-[62ch] pt-1">
               {step.label === undefined ? null : (
-                <p className="mb-1.5 font-body text-[11px] font-semibold uppercase tracking-[0.24em] text-muted">
+                <p className="mb-1.5 font-body text-[11px] font-semibold uppercase text-muted">
                   {step.label}
                 </p>
               )}

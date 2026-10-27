@@ -25,7 +25,7 @@ export function RecipeTips({ tips, filter, filterHref }: RecipeTipsProps) {
           <div>
             <h2
               id="tips-heading"
-              className="font-display text-[28px] font-extrabold tracking-[-0.035em] text-ink"
+              className="font-display text-[28px] font-extrabold text-ink"
             >
               Tips, notes &amp; learnings
             </h2>
@@ -68,7 +68,7 @@ export function RecipeTips({ tips, filter, filterHref }: RecipeTipsProps) {
                 className="rounded-xl border border-rule bg-paper p-4"
               >
                 <div className="flex items-center justify-between gap-3">
-                  <span className="rounded-full border border-rule px-2.5 py-0.5 font-body text-[11px] font-semibold uppercase tracking-[0.18em] text-muted">
+                  <span className="rounded-full border border-rule px-2.5 py-0.5 font-body text-[11px] font-semibold uppercase text-muted">
                     {TYPE_LABELS[tip.type]}
                   </span>
                   <span className="font-body text-[13px] tabular-nums text-muted">

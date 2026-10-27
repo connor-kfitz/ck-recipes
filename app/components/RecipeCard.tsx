@@ -11,8 +11,10 @@ type RecipeCardProps = {
   caloriesPerServing?: boolean
 }
 
-const FRAME_CLASS =
-  "group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-deep"
+const CARD_CLASS =
+  "group h-full overflow-hidden rounded-xl border border-rule bg-paper transition-colors duration-200 has-[a:hover]:border-gold has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-offset-4 has-[a:focus-visible]:outline-gold-deep"
+
+const FRAME_CLASS = "grid h-full grid-rows-[3fr_2fr] focus-visible:outline-none"
 
 export function RecipeCard({
   recipe,
@@ -22,23 +24,31 @@ export function RecipeCard({
 }: RecipeCardProps) {
   const frame = (
     <>
-      <div className="relative aspect-[4/3] overflow-hidden rounded-lg bg-wash">
+      <div className="relative aspect-[5/3] overflow-hidden border-b border-rule bg-wash">
         <Image
           src={recipe.image}
           alt={recipe.imageAlt}
           fill
           sizes={sizes}
-          className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+          className="object-cover transition-transform duration-500 ease-out group-has-[a:hover]:scale-[1.03] motion-reduce:transition-none motion-reduce:group-has-[a:hover]:scale-100"
         />
       </div>
-      <h3 className="mt-4 mb-4 min-h-[2lh] font-display text-[17px] font-bold leading-snug tracking-[-0.02em] text-ink">
-        {recipe.title}
-      </h3>
+      <div className="flex flex-col p-3 sm:p-4">
+        <h3 className="font-display text-lg font-bold leading-snug text-ink sm:text-xl">
+          {recipe.title}
+        </h3>
+        <div className="mt-auto flex items-baseline justify-between gap-3 pt-2 font-body text-[13px] font-medium uppercase tabular-nums">
+          <span className="text-ink">{formatMinutes(recipe.minutes)}</span>
+          <span className="text-muted">
+            {formatCalories(recipe.calories, caloriesPerServing)}
+          </span>
+        </div>
+      </div>
     </>
   )
 
   return (
-    <article className="flex h-full flex-col">
+    <article className={CARD_CLASS}>
       {href === undefined ? (
         <div className={FRAME_CLASS}>{frame}</div>
       ) : (
@@ -46,12 +56,6 @@ export function RecipeCard({
           {frame}
         </Link>
       )}
-      <div className="mt-auto flex items-baseline justify-between gap-3 border-t border-rule pt-2 font-body text-xs font-medium uppercase tracking-[0.08em] tabular-nums">
-        <span className="text-ink">{formatMinutes(recipe.minutes)}</span>
-        <span className="text-muted">
-          {formatCalories(recipe.calories, caloriesPerServing)}
-        </span>
-      </div>
     </article>
   )
 }

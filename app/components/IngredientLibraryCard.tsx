@@ -11,7 +11,7 @@ export function IngredientLibraryCard() {
         className="flex items-center justify-between gap-4 rounded-xl border border-rule bg-wash p-4 transition-colors duration-200 hover:border-gold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-deep lg:hidden"
       >
         <span>
-          <span className="block font-display text-lg font-extrabold tracking-[-0.02em] text-ink">
+          <span className="block font-display text-lg font-extrabold text-ink">
             {ingredientLibrary.heading}
           </span>
           <span className="block font-body text-sm text-muted">
@@ -24,7 +24,7 @@ export function IngredientLibraryCard() {
       <div className="hidden h-full flex-col rounded-xl border border-rule bg-paper p-5 lg:flex">
         <h2
           id="ingredients-title"
-          className="font-display text-2xl font-extrabold tracking-[-0.03em] text-ink"
+          className="font-display text-2xl font-extrabold text-ink"
         >
           {ingredientLibrary.heading}
         </h2>

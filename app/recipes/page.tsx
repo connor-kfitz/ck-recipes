@@ -48,7 +48,7 @@ export default async function RecipesPage(props: PageProps<"/recipes">) {
 
           {matched.length === 0 ? (
             <div className="mt-6 rounded-xl border border-rule bg-wash p-8 text-center">
-              <p className="font-display text-[17px] font-bold tracking-[-0.02em] text-ink">
+              <p className="font-display text-[17px] font-bold text-ink">
                 Nothing matches that yet.
               </p>
               <p className="mx-auto mt-2 max-w-[42ch] font-body text-sm text-muted">
@@ -70,7 +70,7 @@ export default async function RecipesPage(props: PageProps<"/recipes">) {
             </div>
           ) : (
             <>
-              <div className="mt-5 hidden grid-cols-2 gap-x-6 gap-y-9 sm:grid lg:grid-cols-3">
+              <div className="mt-5 hidden grid-cols-2 gap-6 sm:grid lg:grid-cols-3">
                 {visible.map((recipe) => (
                   <RecipeCard
                     key={recipe.id}
